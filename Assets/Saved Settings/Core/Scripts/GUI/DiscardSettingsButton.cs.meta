@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 28b4c9120b44f8f498719edbc7842f5d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/GUI/DiscardSettingsButton.cs
+  uploadId: 603710

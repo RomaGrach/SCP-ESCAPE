@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: db0a5ad67dc9f5a4690c47507708255f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/GUI/ShadowResolutionDropdown.cs
+  uploadId: 603710

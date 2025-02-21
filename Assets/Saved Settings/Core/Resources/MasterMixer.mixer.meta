@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 21f48504eea56f04b88e7d17ed8b0d4a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Resources/MasterMixer.mixer
+  uploadId: 603710
