@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb3b2ab112c7fa54687ab503ded4bec4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263242
+  packageName: Multi-Input First Person Controller (Lite)
+  packageVersion: 1.0
+  assetPath: Assets/MFPC/Resources/Environment/Door.prefab
+  uploadId: 621915

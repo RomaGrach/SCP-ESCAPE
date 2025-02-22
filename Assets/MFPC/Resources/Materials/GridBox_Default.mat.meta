@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4bc7baa1874a601498437b107fdedb60
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263242
+  packageName: Multi-Input First Person Controller (Lite)
+  packageVersion: 1.0
+  assetPath: Assets/MFPC/Resources/Materials/GridBox_Default.mat
+  uploadId: 621915

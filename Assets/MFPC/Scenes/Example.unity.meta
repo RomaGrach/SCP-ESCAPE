@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 40e75bf0f96f5e54489e497773bb7077
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263242
+  packageName: Multi-Input First Person Controller (Lite)
+  packageVersion: 1.0
+  assetPath: Assets/MFPC/Scenes/Example.unity
+  uploadId: 621915

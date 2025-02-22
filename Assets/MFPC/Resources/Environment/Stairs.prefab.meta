@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9ea8b282cc3d16b4e9877a93c9ee9ba4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263242
+  packageName: Multi-Input First Person Controller (Lite)
+  packageVersion: 1.0
+  assetPath: Assets/MFPC/Resources/Environment/Stairs.prefab
+  uploadId: 621915
