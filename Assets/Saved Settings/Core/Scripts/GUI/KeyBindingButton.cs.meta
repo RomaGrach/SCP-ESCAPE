@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 791cae29dd7a34e4c8d7c2cee59bb2b8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/GUI/KeyBindingButton.cs
+  uploadId: 603710

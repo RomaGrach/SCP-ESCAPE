@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 2df9f1ddb89b2544a989d73e16888bc2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/SaveHelper.cs
+  uploadId: 603710

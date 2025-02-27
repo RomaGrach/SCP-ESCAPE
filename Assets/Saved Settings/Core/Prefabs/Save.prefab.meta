@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dae1a60c0afe9df489cb3db3f0ee7891
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Prefabs/Save.prefab
+  uploadId: 603710

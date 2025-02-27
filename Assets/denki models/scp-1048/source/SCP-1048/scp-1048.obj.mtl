@@ -1,0 +1,11 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v3.3.0)
+
+newmtl texture__1048_normal_test_png
+Kd 0.8000000715255737 0.8000000715255737 0.8000000715255737
+Ks 0.0007507324335165322 0.0007507324335165322 0.0007507324335165322
+d 1
+Ns 0.09609375149011612
+illum 2
+map_Kd 1048_diffusetest01.png
+

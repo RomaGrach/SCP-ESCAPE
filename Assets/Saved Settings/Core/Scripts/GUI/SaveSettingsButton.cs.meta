@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 90b22e643d01a3443a0dc45a5d8b2168
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/GUI/SaveSettingsButton.cs
+  uploadId: 603710
