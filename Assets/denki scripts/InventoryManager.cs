@@ -1,43 +1,86 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.UI;
+
 public class InventoryManager : MonoBehaviour
 {
-    public GameObject inventoryPanel; // Панель инвентаря
-    public Image[] itemSlots; // Ячейки для предметов
+    public static InventoryManager instance; // Singleton
+
+    public GameObject inventoryPanel; // РџР°РЅРµР»СЊ РёРЅРІРµРЅС‚Р°СЂСЏ
+    public Image[] itemSlots; // РЇС‡РµР№РєРё-РёРЅРІРµРЅС‚Р°СЂСЊ (5 РєРЅРѕРїРѕРє)
+    private InventoryItem[] inventory = new InventoryItem[5]; // РњР°СЃСЃРёРІ РїСЂРµРґРјРµС‚РѕРІ
     private bool isInventoryOpen = false;
     private int selectedItemIndex = -1;
+
+    void Awake() // РњРµС‚РѕРґ Awake() РґР»СЏ Singleton
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    } // в†ђ Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ Awake()
+
     void Start()
     {
-        inventoryPanel.SetActive(false); // Инвентарь скрыт при старте
-    }
+        inventoryPanel.SetActive(false);
+    } // в†ђ Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ Start()
+
     void Update()
     {
-        // Открытие/закрытие инвентаря на клавишу B
         if (Input.GetKeyDown(KeyCode.B))
         {
             isInventoryOpen = !isInventoryOpen;
             inventoryPanel.SetActive(isInventoryOpen);
         }
 
-        // Переключение предметов клавишами 1-5
         for (int i = 0; i < itemSlots.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i))
+            if (Input.GetKeyDown(KeyCode.Alpha1 + i) && inventory[i] != null)
             {
                 SelectItem(i);
             }
         }
-    }
+    } // в†ђ Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ Update()
+
+    public bool AddItem(InventoryItem newItem)
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            if (inventory[i] == null)
+            {
+                inventory[i] = newItem;
+                itemSlots[i].sprite = newItem.icon;
+                itemSlots[i].enabled = true;
+                return true;
+            }
+        }
+        Debug.Log("РРЅРІРµРЅС‚Р°СЂСЊ РїРѕР»РѕРЅ!");
+        return false;
+    } // в†ђ Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ AddItem()
+
     void SelectItem(int index)
     {
         selectedItemIndex = index;
-        Debug.Log("Выбран предмет в слоте " + (index + 1));
+        Debug.Log("Р’С‹Р±СЂР°РЅ РїСЂРµРґРјРµС‚: " + inventory[index].itemName);
 
-        // Можно добавить визуальное выделение активного предмета
         for (int i = 0; i < itemSlots.Length; i++)
         {
             itemSlots[i].color = (i == index) ? Color.yellow : Color.white;
         }
-    }
-}
+    } // в†ђ Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ SelectItem()
 
+    public void UseItem()
+    {
+        if (selectedItemIndex != -1 && inventory[selectedItemIndex] != null)
+        {
+            Debug.Log("РСЃРїРѕР»СЊР·РѕРІР°РЅ РїСЂРµРґРјРµС‚: " + inventory[selectedItemIndex].itemName);
+            inventory[selectedItemIndex] = null;
+            itemSlots[selectedItemIndex].sprite = null;
+            itemSlots[selectedItemIndex].enabled = false;
+            selectedItemIndex = -1;
+        }
+    } // в†ђ Р—Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ UseItem()
+} // в†ђ Р¤РёРЅР°Р»СЊРЅР°СЏ Р·Р°РєСЂС‹РІР°СЋС‰Р°СЏ СЃРєРѕР±РєР° РґР»СЏ РєР»Р°СЃСЃР°
