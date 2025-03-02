@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 9d4e5d19d9d36514899be19deb5ad7e9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/GUI/ReloadSceneButton.cs
+  uploadId: 603710

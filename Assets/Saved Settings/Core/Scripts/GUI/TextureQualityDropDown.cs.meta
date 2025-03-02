@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e5f338cf4d401414c8a62d6ca2ada8a2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Scripts/GUI/TextureQualityDropDown.cs
+  uploadId: 603710

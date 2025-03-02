@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2c0e341340de73344836e715ad152ea5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 158267
+  packageName: Saved Settings
+  packageVersion: 1.1
+  assetPath: Assets/Saved Settings/Core/Prefabs/Reset Settings.prefab
+  uploadId: 603710
