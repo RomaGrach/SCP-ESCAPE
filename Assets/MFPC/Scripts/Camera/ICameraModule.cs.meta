@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: bfa4c7fa23b34a64a0758981e8ff691c
+timeCreated: 1695326022
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263242
+  packageName: Multi-Input First Person Controller (Lite)
+  packageVersion: 1.0
+  assetPath: Assets/MFPC/Scripts/Camera/ICameraModule.cs
+  uploadId: 621915

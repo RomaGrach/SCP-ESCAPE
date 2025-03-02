@@ -3,7 +3,12 @@ guid: d383064194dd0ed429b5dd8f0657e03a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ScpCabinet1Mat
+    second: {fileID: 2100000, guid: cdc48ce9cfc9b47408169b5332926301, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

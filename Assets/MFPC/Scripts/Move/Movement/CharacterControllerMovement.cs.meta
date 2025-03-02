@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: 5422811f18a749c889ddacfe8947e084
+timeCreated: 1694950391
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263242
+  packageName: Multi-Input First Person Controller (Lite)
+  packageVersion: 1.0
+  assetPath: Assets/MFPC/Scripts/Move/Movement/CharacterControllerMovement.cs
+  uploadId: 621915
