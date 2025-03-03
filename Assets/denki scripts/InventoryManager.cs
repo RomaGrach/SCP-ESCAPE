@@ -6,12 +6,15 @@ public class InventoryManager : MonoBehaviour
     public static InventoryManager instance; // Singleton
 
     public GameObject inventoryPanel; // Панель инвентаря
-    public Image[] itemSlots; // Ячейки-инвентарь (5 кнопок)
-    private InventoryItem[] inventory = new InventoryItem[5]; // Массив предметов
+    public Image[] itemSlots; // Ячейки-инвентаря
+    private InventoryItem[] inventory = new InventoryItem[10]; // 10 предметов
     private bool isInventoryOpen = false;
     private int selectedItemIndex = -1;
 
-    void Awake() // Метод Awake() для Singleton
+    public Transform dropPoint; // Точка выброса предмета (назначь в Unity)
+    public GameObject itemPrefab; // Префаб выбрасываемого предмета
+
+    void Awake()
     {
         if (instance == null)
         {
@@ -21,12 +24,12 @@ public class InventoryManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    } // ← Закрывающая скобка для Awake()
+    }
 
     void Start()
     {
         inventoryPanel.SetActive(false);
-    } // ← Закрывающая скобка для Start()
+    }
 
     void Update()
     {
@@ -38,12 +41,21 @@ public class InventoryManager : MonoBehaviour
 
         for (int i = 0; i < itemSlots.Length; i++)
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1 + i) && inventory[i] != null)
+            if ((i < 9 && Input.GetKeyDown(KeyCode.Alpha1 + i)) || (i == 9 && Input.GetKeyDown(KeyCode.Alpha0)))
             {
-                SelectItem(i);
+                if (inventory[i] != null)
+                {
+                    SelectItem(i);
+                }
             }
         }
-    } // ← Закрывающая скобка для Update()
+
+        // Выбросить предмет при нажатии Q
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            DropItem();
+        }
+    }
 
     public bool AddItem(InventoryItem newItem)
     {
@@ -59,7 +71,7 @@ public class InventoryManager : MonoBehaviour
         }
         Debug.Log("Инвентарь полон!");
         return false;
-    } // ← Закрывающая скобка для AddItem()
+    }
 
     void SelectItem(int index)
     {
@@ -70,7 +82,7 @@ public class InventoryManager : MonoBehaviour
         {
             itemSlots[i].color = (i == index) ? Color.yellow : Color.white;
         }
-    } // ← Закрывающая скобка для SelectItem()
+    }
 
     public void UseItem()
     {
@@ -82,5 +94,32 @@ public class InventoryManager : MonoBehaviour
             itemSlots[selectedItemIndex].enabled = false;
             selectedItemIndex = -1;
         }
-    } // ← Закрывающая скобка для UseItem()
-} // ← Финальная закрывающая скобка для класса
+    }
+
+    public void DropItem()
+    {
+        if (selectedItemIndex == -1 || inventory[selectedItemIndex] == null)
+        {
+            Debug.Log("Нет выбранного предмета для выброса!");
+            return;
+        }
+
+        Debug.Log("Выброшен предмет: " + inventory[selectedItemIndex].itemName);
+
+        // Определяем позицию выброса перед игроком
+        Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 dropPosition = playerTransform.position + playerTransform.forward * 1.5f; // 1.5 метра впереди
+
+        // Создаём выброшенный предмет перед игроком
+        GameObject droppedItem = Instantiate(itemPrefab, dropPosition, Quaternion.identity);
+        droppedItem.GetComponent<ItemPickup>().itemData = inventory[selectedItemIndex];
+
+        // Очищаем слот в инвентаре
+        inventory[selectedItemIndex] = null;
+        itemSlots[selectedItemIndex].sprite = null;
+        itemSlots[selectedItemIndex].enabled = false;
+
+        selectedItemIndex = -1;
+    }
+
+}
