@@ -1,60 +1,55 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.UI;
 
 public class SCP012Effect : MonoBehaviour
 {
-    public float pullForce = 2f; // Сила притяжения
-    public AudioSource scpMusic; // Музыка SCP-012
-    public GameObject gameOverPanel; // Панель "Конец игры"
+    public float pullForce = 2f; // РЎРёР»Р° РїСЂРёС‚СЏР¶РµРЅРёСЏ
+    public float pullRadius = 100f; // Р Р°РґРёСѓСЃ РїСЂРёС‚СЏР¶РµРЅРёСЏ
+    public AudioSource scpMusic; // РњСѓР·С‹РєР° SCP-012
+    public GameObject gameOverPanel; // РџР°РЅРµР»СЊ "РљРѕРЅРµС† РёРіСЂС‹"
 
     private Transform player;
-    private bool isPlayerNear = false;
 
     void Start()
     {
-        gameOverPanel.SetActive(false); // Скрываем панель при старте
+        gameOverPanel.SetActive(false); // РЎРєСЂС‹РІР°РµРј РїР°РЅРµР»СЊ РїСЂРё СЃС‚Р°СЂС‚Рµ
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
-        if (isPlayerNear)
+        float distance = Vector3.Distance(player.position, transform.position);
+
+        // Р•СЃР»Рё РёРіСЂРѕРє РІ СЂР°РґРёСѓСЃРµ 100, РІРєР»СЋС‡Р°РµРј РјСѓР·С‹РєСѓ Рё РїСЂРёС‚СЏРіРёРІР°РµРј
+        if (distance < pullRadius)
         {
-            // Притягивание игрока к SCP-012
+            if (!scpMusic.isPlaying) scpMusic.Play(); // Р’РєР»СЋС‡Р°РµРј РјСѓР·С‹РєСѓ (РµСЃР»Рё РЅРµ РёРіСЂР°РµС‚)
+
+            // РџСЂРёС‚СЏРіРёРІР°РЅРёРµ РёРіСЂРѕРєР° Рє SCP-012
             Vector3 direction = (transform.position - player.position).normalized;
             player.position += direction * pullForce * Time.deltaTime;
 
-            // Изменение громкости музыки в зависимости от расстояния
-            float distance = Vector3.Distance(player.position, transform.position);
-            scpMusic.volume = Mathf.Clamp01(1f - (distance / 10f)); // Чем ближе, тем громче
+            // Р“СЂРѕРјРєРѕСЃС‚СЊ РјСѓР·С‹РєРё РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ СЂР°СЃСЃС‚РѕСЏРЅРёСЏ
+            scpMusic.volume = Mathf.Clamp01(1f - (distance / pullRadius));
+        }
+        else
+        {
+            scpMusic.Stop(); // Р•СЃР»Рё РІС‹С€РµР» Р·Р° СЂР°РґРёСѓСЃ - РІС‹РєР»СЋС‡Р°РµРј РјСѓР·С‹РєСѓ
         }
     }
 
+    // рџ’Ђ Р•СЃР»Рё РёРіСЂРѕРє РєР°СЃР°РµС‚СЃСЏ SCP-012, РёРіСЂР° Р·Р°РєР°РЅС‡РёРІР°РµС‚СЃСЏ
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            isPlayerNear = true;
-            scpMusic.Play(); // Включаем музыку
+            GameOver();
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void GameOver()
     {
-        if (other.CompareTag("Player"))
-        {
-            isPlayerNear = false;
-            scpMusic.Stop(); // Останавливаем музыку, если игрок вышел
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            gameOverPanel.SetActive(true); // Показываем панель "Конец игры"
-            Time.timeScale = 0f; // Останавливаем время
-        }
+        gameOverPanel.SetActive(true); // РџРѕРєР°Р·С‹РІР°РµРј РїР°РЅРµР»СЊ "РљРѕРЅРµС† РёРіСЂС‹"
+        Time.timeScale = 0f; // РћСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІСЂРµРјСЏ
     }
 }
-

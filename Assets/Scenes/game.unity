@@ -888,7 +888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57bea8614d8e634c9edb96a27ad0099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pullForce: 2
+  pullForce: 100
   scpMusic: {fileID: 630408767}
   gameOverPanel: {fileID: 989045098}
 --- !u!1 &182341647
@@ -7082,7 +7082,7 @@ MonoBehaviour:
   - {fileID: 483919826}
   - {fileID: 560726103}
   - {fileID: 2012371851}
-  dropPoint: {fileID: 0}
+  dropPoint: {fileID: 1931411654}
   itemPrefab: {fileID: 0}
 --- !u!1001 &1823592597
 PrefabInstance:

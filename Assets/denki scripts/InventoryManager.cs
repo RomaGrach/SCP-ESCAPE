@@ -66,6 +66,8 @@ public class InventoryManager : MonoBehaviour
                 inventory[i] = newItem;
                 itemSlots[i].sprite = newItem.icon;
                 itemSlots[i].enabled = true;
+
+                Debug.Log($"Предмет {newItem.itemName} добавлен в слот {i}.");
                 return true;
             }
         }
