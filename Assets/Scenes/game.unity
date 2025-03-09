@@ -889,6 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pullForce: 100
+  pullRadius: 100
   scpMusic: {fileID: 630408767}
   gameOverPanel: {fileID: 989045098}
 --- !u!1 &182341647
@@ -4621,6 +4622,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5dbd33efe198ab24c9068a54855fa20e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1183627468}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5dbd33efe198ab24c9068a54855fa20e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1183627470}
   m_SourcePrefab: {fileID: 100100000, guid: 5dbd33efe198ab24c9068a54855fa20e, type: 3}
 --- !u!1 &1183627467 stripped
 GameObject:
@@ -4661,6 +4665,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.095886, y: 3.452446, z: 4.5828934}
   m_Center: {x: 0.07672119, y: 0.30141068, z: -0.3101921}
+--- !u!114 &1183627470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183627467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2edd7bc68d2bbe4e8de87cc5a957457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scp409Item: {fileID: 11400000, guid: 6698ce0add9ed5e45b5a95a681c07433, type: 2}
+  gameOverPanel: {fileID: 989045098}
 --- !u!1001 &1192490637
 PrefabInstance:
   m_ObjectHideFlags: 0

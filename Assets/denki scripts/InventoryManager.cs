@@ -85,6 +85,17 @@ public class InventoryManager : MonoBehaviour
             itemSlots[i].color = (i == index) ? Color.yellow : Color.white;
         }
     }
+    public bool HasItem(string itemName)
+    {
+        foreach (var item in inventory)
+        {
+            if (item != null && item.itemName == itemName)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void UseItem()
     {
